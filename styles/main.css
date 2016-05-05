@@ -64,4 +64,85 @@
 html {
   font-size: 62.5%; }
 
+body {
+  font-size: 1.4rem;
+  font-family: Arial; }
+
+.page__head {
+  height: 8rem;
+  width: 100%; }
+
+.etsy-logo {
+  position: relative;
+  float: left;
+  height: 5.6rem;
+  margin-top: 1rem; }
+
+.search__wrapper {
+  position: relative;
+  float: left;
+  font-size: 0;
+  height: 80px;
+  padding-top: 1.5rem;
+  width: 45%; }
+
+.search__input {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  border-right: 0;
+  border-top: 1px solid #2ca8c4;
+  border-left: 1px solid #2ca8c4;
+  border-bottom: 1px solid #2ca8c4;
+  font-size: 1.4rem;
+  float: left;
+  height: 31px;
+  padding: 0;
+  padding-left: 1rem;
+  top: 50%;
+  width: 76%; }
+
+.search__button {
+  background-color: #2ca8c4;
+  border: 0;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  color: white;
+  float: left;
+  font-size: 1.6rem;
+  font-weight: 500;
+  height: 33px;
+  margin-left: 0;
+  top: 20%;
+  width: 19%; }
+
+.result__images--wrapper {
+  width: 100%;
+  padding: 2rem; }
+
+.photo__wrapper {
+  box-sizing: border-box;
+  height: 45rem;
+  overflow: hidden;
+  vertical-align: top; }
+
+.photo__el {
+  height: 30rem; }
+
+.result__caption {
+  font-size: 1.2rem; }
+
+.shop-name {
+  color: #9a9a9a;
+  font-size: 1.2rem;
+  float: left;
+  margin-top: 0;
+  width: 85%; }
+
+.price {
+  color: #78c042;
+  font-size: 1.2rem;
+  float: left;
+  margin-top: 0;
+  text-align: right; }
+
 /*# sourceMappingURL=main.css.map */

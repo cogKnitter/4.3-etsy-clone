@@ -6,6 +6,24 @@
     <link rel="stylesheet" href="styles/main.css" charset="utf-8">
   </head>
   <body>
+    <header class="page__head">
+      <img class="etsy-logo" src="images/Etsy_logo.png" alt="Etsy"/>
+      <form class="search__wrapper" action="index.html" method="post">
+        <input class="search__input" type="text" name="search__input" value="" placeholder="Search for items or shops">
+        <input class="search__button" type="button" name="search" value="Search"></input>
+      </form>
+
+    </header>
+    <section class="result__images--wrapper">
+
+      <span class="grid__col--4 photo__wrapper" data-js="photoWrapper" >
+        <img class="photo__el" data-js="select-photo" src="https://img1.etsystatic.com/100/1/9523834/il_570xN.833507837_7agm.jpg"/>
+        <h2 class="result__caption">Result caption</h2>
+        <h2 class="shop-name">Shop Name</h2>
+        <h2 class="price">$price</h2>
+      </span>
+
+    </section>
 
   </body>
   <script type="text/javascript" src="js/bundle.js"></script>
