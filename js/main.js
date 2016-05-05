@@ -1,4 +1,5 @@
 var $ = require("jquery");
+var $ = require("listingResults")
 
 $(function(){
 
