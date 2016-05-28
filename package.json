@@ -11,6 +11,6 @@
     "jquery": "^2.2.3"
   },
   "browser": {
-    "listingResults": "/js/listingResults.js"
+    "listingResults": "./js/listingResults.js"
   }
 }
