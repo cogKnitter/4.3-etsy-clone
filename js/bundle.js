@@ -1,30 +1,47 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var $ = require("jquery");
 
+var $keywordEntry = $("[data-js='searchInput']");
+var $keywordForm = $("[data-js='searchForm']");
 var $listings = $("[data-js='listings']");
+var $searchKey = ("");
+var $searchTerm = ("");
 
 this.appendResults =function(){
+  $keywordEntry.on("keyup", function(e) {
+    $searchKey = $(e.target)
+  });
 
-  $.getJSON("https://openapi.etsy.com/v2/listings/active.js?api_key=h9oq2yf3twf4ziejn10b717i&keywords=whiskey&includes=Images,Shop&callback=?", function(data){
-  console.log(data);
-    data.results.forEach(function(resp) {
-      $listings.append(`
-        <span class="grid__col--3 photo__wrapper" >
-          <img class="photo__el" src="${resp.Images[0].url_170x135}"/>
-          <h2 class="result__caption">${resp.title}</h2>
-          <h2 class="shop-name">${resp.Shop.shop_name}</h2>
-          <h2 class="price">${resp.price}</h2>
-        </span>
-        `)
-    })
-});
+  $keywordForm.on("submit", function(e) {
+    $searchTerm = $searchKey.val();
+    e.preventDefault();
+
+
+    $.getJSON("https://openapi.etsy.com/v2/listings/active.js?api_key=h9oq2yf3twf4ziejn10b717i&keywords=" + $searchTerm + "&includes=Images,Shop&callback=?", function(data){
+    console.log(data);
+      data.results.forEach(function(resp) {
+        $listings.append(`
+          <span class="grid__col--3 photo__wrapper" >
+            <img class="photo__el" src="${resp.Images[0].url_170x135}"/>
+            <div class="caption__wrapper">
+              <h2 class="result__caption">${resp.title}</h2>
+            </div>
+            <div class="name-price__wrapper">
+              <h2 class="shop-name">${resp.Shop.shop_name}</h2>
+              <h2 class="price">${resp.price}</h2>
+            </div>
+          </span>
+          `)
+      })
+    });
+    $keywordEntry.val("");
+  });
 
 }
 
 },{"jquery":3}],2:[function(require,module,exports){
 var $ = require("jquery");
 var listingResults = require("listingResults");
-
 
 $(function(){
   listingResults.appendResults();
