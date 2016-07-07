@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="styles/main.css" charset="utf-8">
+  </head>
+  <body>
+    <header class="page__head">
+      <img class="etsy-logo" src="images/Etsy_logo.png" alt="Etsy"/>
+      <form class="search__wrapper" action="#" method="get" data-js="searchForm">
+        <input class="search__input" type="text" name="search__input" value="" placeholder="Search for items or shops" data-js="searchInput">
+        <input class="search__button" type="submit" name="search" value="Search"></input>
+      </form>
+
+    </header>
+    <section class="result__images--wrapper">
+      <div data-js="listings">
+        <!-- results dynamically inserted via listingResults.js  -->
+      </div>
+    </section>
+
+  </body>
+  <script type="text/javascript" src="js/bundle.js"></script>
+</html>
